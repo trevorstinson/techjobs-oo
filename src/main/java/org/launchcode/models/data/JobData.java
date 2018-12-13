@@ -65,13 +65,13 @@ public class JobData {
 
         for (Job job : jobs) {
 
-            if (job.getName().toLowerCase().contains(value)) {
+            if (job.getName().toLowerCase().contains(value.toLowerCase())) {
                 matchingJobs.add(job);
                 continue;
             }
 
             for (JobFieldType column : JobFieldType.values()) {
-                if (column != JobFieldType.ALL && getFieldByType(job, column).contains(value)) {
+                if (column != JobFieldType.ALL && getFieldByType(job, column).contains(value.toLowerCase())) {
                     matchingJobs.add(job);
                     break;
                 }
